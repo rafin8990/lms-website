@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LessonDetails.css';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Container, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary,  Button, Typography } from '@mui/material';
 import { FcExpand } from "react-icons/fc";
 
-const LessonDetails = ({ lesson }) => {
-    const { modiuleName, lessons } = lesson;
-    const [selectedVideo, setSelectedVideo] = useState(null);
+const LessonDetails = ({ lesson, setSelectedVideo }) => {
+    const { name, lessons } = lesson;
     const handleVideoSelect = (video) => {
         setSelectedVideo(video);
     };
@@ -20,28 +19,20 @@ const LessonDetails = ({ lesson }) => {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <Typography>{modiuleName}</Typography>
+                            <Typography>{name}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             {
                                 lessons.map((video, i) => (
                                     <li>
                                         <Button key={i} onClick={() => handleVideoSelect(video)}>
-                                            {video.lessonTitle}
+                                            {video.name}
                                         </Button>
                                     </li>
                                 ))
                             }
                         </AccordionDetails>
                     </Accordion>
-                </div>
-                <div>
-                    <Container maxWidth="sm">
-                        <Box sx={{  }} />
-                    </Container>
-                    {selectedVideo && (
-                        <video src={selectedVideo.leasonVideo} controls autoplay width="400" height="300" />
-                    )}
                 </div>
             </div>
         </div>

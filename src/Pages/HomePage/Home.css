@@ -1,3 +1,7 @@
 .lessonDiv{
     height: 700px;
 }
+.videoPlayer{
+    border: 1px solid gray;
+    padding: 10px;
+}
