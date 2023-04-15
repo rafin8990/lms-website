@@ -28,8 +28,8 @@ const Home = () => {
                     <Typography variant='h3'>Swachh Akshar LMS Website</Typography>
                 </ThemeProvider>
             </div>
-            <div style={{ display: 'flex', width: '1440px', marginLeft: 'auto', marginRight: 'auto', marginTop: '50px', height: '500px',  }}>
-                <div style={{ width: "30%", }}>
+            <div style={{ display: 'flex', width: '1440px', marginLeft: 'auto', marginRight: 'auto', marginTop: '50px'}}>
+                <div style={{ width: "30%", height : '500px'? "": ""}}>
                     {
                         data.map(module => <LessonDetails
                             key={module.id}
@@ -38,7 +38,7 @@ const Home = () => {
                         ></LessonDetails>)
                     }
                 </div>
-                <div className='videoPlayer' style={{ width: "70%", backgroundColor: 'black' }}>
+                <div className='videoPlayer' style={{ width: "70%", backgroundColor: 'black',height: '500px', }}>
                     <VideoPlayer
                         selectedVideo={selectedVideo}
                     ></VideoPlayer>
